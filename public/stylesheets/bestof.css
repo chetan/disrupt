@@ -1,0 +1,15 @@
+
+.ui-content { height: 100%; }
+
+/* navbar stuff */
+
+.ui-navbar .ui-btn .ui-btn-inner { padding-top: 40px !important; }
+.ui-navbar-expanded ul .ui-btn .ui-btn-inner { padding-top: 55px !important; }
+.ui-navbar .ui-btn .ui-icon, .ui-navbar-expanded ul .ui-btn .ui-icon { width: 30px!important; height: 30px!important; margin-left: -15px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: none !important; border-radius: none !important; }
+.ui-navbar-expanded ul .ui-btn .ui-icon { top: 20px; }
+.ui-navbar .ui-navbar-toggle .ui-icon { background:  url(glyphish-icons/19-gear.png) 50% 50% no-repeat !important; }
+
+.ui-icon-home    { background:  url(/images/icons/home.png)     50% 50% no-repeat; }
+.ui-icon-friends { background:  url(/images/icons/friends.png)  50% 50% no-repeat; }
+.ui-icon-places  { background:  url(/images/icons/places.png)   50% 50% no-repeat; }
+.ui-icon-me      { background:  url(/images/icons/me.png)       50% 50% no-repeat; }

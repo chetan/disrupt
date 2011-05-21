@@ -1,0 +1,38 @@
+!!!
+%html
+  %head
+    %title Disrupt
+
+    = stylesheet_link_tag 'jquery.mobile-1.0a4.1', 'bestof'
+    = javascript_include_tag 'application', 'jquery-1.5.1.js', 'jquery.mobile-1.0a4.1'
+    = csrf_meta_tag
+
+  %body
+
+    %div#jqm-home{"data-role" => "page", "data-theme" => "b"}
+
+      %div{"data-role" => "header"}
+        %h1.header-title
+          Best Of!
+
+      %div{"data-role" => "content"}
+        = yield
+
+      %div{"data-role" => "footer", "data-position" => "fixed"}
+        %div{"data-role" => "navbar"}
+          %ul
+            %li
+              %a.ui-btn-active{:href => "/home", "data-icon" => "home", "data-iconpos" => "top", "data-grid" => "d"}
+                Home
+
+            %li
+              %a{:href => "/friends", "data-icon" => "friends", "data-iconpos" => "top", "data-grid" => "d"}
+                Friends
+
+            %li
+              %a{:href => "/places", "data-icon" => "places", "data-iconpos" => "top", "data-grid" => "d"}
+                Places
+
+            %li
+              %a{:href => "/me", "data-icon" => "me", "data-iconpos" => "top", "data-grid" => "d"}
+                Me

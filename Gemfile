@@ -9,6 +9,8 @@ gem 'mysql'
 gem 'haml'
 gem 'foursquare2'
 gem 'multi_json'
+gem 'fb_graph'
+gem 'koala'
 
 # Use unicorn as the web server
 # gem 'unicorn'

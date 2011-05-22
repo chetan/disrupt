@@ -1,12 +1,21 @@
 
 $(window).load(function() {
-  
+
+  FB.init({
+    appId  : '166257770103222',
+    status : true, // check login status
+    cookie : true, // enable cookies to allow the server to access the session
+    xfbml  : true  // parse XFBML
+  });
+
+  FB.login();
+
   if (geo_position_js.init()) {
       geo_position_js.getCurrentPosition(success_callback,error_callback,{enableHighAccuracy:true,options:5000});
   }
 
   function success_callback(p) {
-    $.ajax("/geo/set?lat=" + p.coords.latitude + "&lng=" + p.coords.longitude);      
+    $.ajax("/geo/set?lat=" + p.coords.latitude + "&lng=" + p.coords.longitude);
   }
 
   function error_callback(p) {

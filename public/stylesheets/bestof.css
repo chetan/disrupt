@@ -18,6 +18,10 @@ div.spacer {
 	padding-top: 15px;
 }
 
+div.friend h3 { display: inline; }
+
+div.welcome img { float: right; }
+
 /* dish search */
 div.current_rankings { display: none; }
 

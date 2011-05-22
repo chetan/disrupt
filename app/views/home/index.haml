@@ -3,10 +3,34 @@
   %a.ui-btn-right{ :href => "/rankings/add", "data-role" => "button", "data-icon" => "add", "data-iconpos" => "right" }
     Add
 
-%h2 Recent Activity
+%div#fb-root
+
+%div.welcome
+  %img{ :src => @user.facebook_photo }
+  %h2
+    Welcome
+    = @user.name
+
+%h2 Your Recent Activity
 %ul
-  - @recent_rankings.each do |rank|
+  - @user.rankings.recent.each do |rank|
     %li
       = rank.venue.name
-      was ranked
       = "##{rank.position}"
+      in
+      = "[#{rank.dish.name}]"
+
+%h2 Your Friends Recent Activity
+%ul
+  - @user.friends.each do |friend|
+    %div.friend
+      %img{ :src => friend.facebook_photo, :width => 20, :height => 20 }
+      %h3
+        = friend.name
+
+      - friend.rankings.recent.each do |rank|
+        %li
+          = rank.venue.name
+          = "##{rank.position}"
+          in
+          = "[#{rank.dish.name}]"

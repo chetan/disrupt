@@ -8,15 +8,49 @@ $(window).load(function() {
   $("#dish").typeWatch({ wait: 300, highlight: true, captureLength: 2, callback: dishSearch });
 
   $("#dishes").change(function() {
-    $("#dish").val( $("#dishes option:selected").text() );
+    var sel = $("#dishes option:selected");
+    $("#dish").val( sel.text() );
+    $("#dish_id").val( sel.val() );
+    // pull current rankings for this dish
+    $.getJSON("/rankings/search?dish_id=" + sel.val(), function(data) {
+      if (data.length == 0) {
+        $("div.current_rankings").hide();
+        return;
+      }
+      $("div.current_rankings").show();
+      var items = "<ol>";
+      for (var i = 0; i < data.length; i++) {
+        var rank = data[i].ranking;
+        items += '<li>' + rank.venue.name + '</option>';
+      }
+      items += "</ol>";
+      $("div.current_rankings span").html(items);
+    });
   });
 
   $("#dish").focus();
 
+
   $("#place").typeWatch({ wait: 300, highlight: true, captureLength: 2, callback: placeSearch });
 
   $("#places").change(function() {
-    $("#place").val( $("#places option:selected").text() );
+    var sel = $("#places option:selected");
+    $("#place").val( sel.text() );
+    $("#place_id").val( sel.val() );
+  });
+
+
+  $("input.ranking").change(function() {
+    var val = $(this).val();
+    if (val > 10) {
+      val = "10+";
+    }
+    $("span.ranking strong").html( val );
+  });
+
+
+  $("a.save_ranking").click(function() {
+    $("form").submit();
   });
 
 });
@@ -40,7 +74,6 @@ function dishSearch() {
   });
 
 }
-
 
 function placeSearch() {
 

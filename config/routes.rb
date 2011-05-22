@@ -58,14 +58,17 @@ Disrupt::Application.routes.draw do
 
   root :to => "home#index"
 
-  match "/home"    => "home#index"
-  match "/friends" => "friends#index"
-  match "/places"  => "places#index"
+  match "/home"          => "home#index"
+  match "/friends"       => "friends#index"
+  match "/places"        => "places#index"
   match "/places/search" => "places#search"
-  match "/me"      => "me#index"
+  match "/me"            => "me#index"
 
   match "/dishes/search" => "dishes#search"
 
-  match "/rankings/add"   => "rankings#add"
+  match "/rankings/add"    => "rankings#add"
+  match "/rankings/search" => "rankings#search"
+  match "/rankings/save"   => "rankings#save"
+
 
 end

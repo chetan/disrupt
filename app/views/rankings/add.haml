@@ -1,17 +1,34 @@
 - @header_title = "BestOf :: Rank a dish"
+- content_for :header_buttons do
+  %a.ui-btn-right.save_ranking{ :href => "#", "data-role" => "button", "data-icon" => "save", "data-iconpos" => "right" }
+    Save
 
-%form{ :method => "post", :action => "/rankings/add" }
+
+%form{ :method => "post", :action => "/rankings/save" }
 
   %div.spacer
     %label{:for => "dish"}
       Dish
     %input{:type => "search", :name => "dish", :id => "dish"}
-    %input{:type => "hidden", :id => "dish_id"}
+    %input{:type => "hidden", :name => "dish_id", :id => "dish_id"}
     %select#dishes{"data-native-menu" => "false"}
 
   %div.spacer
     %label{:for => "place"}
       Place
     %input{:type => "search", :name => "place", :id => "place"}
-    %input{:type => "hidden", :id => "place_id"}
+    %input{:type => "hidden", :name => "place_id", :id => "place_id"}
     %select#places{"data-native-menu" => "false"}
+    
+  %div.spacer
+    %label{:for => "rank"}
+      Rank:
+    %span.ranking
+      &nbsp;&nbsp;&nbsp;
+      %strong
+        1
+    %input.ranking{:name => "position", :type => "range", :min => 1, :max => 11, :value => 1}
+    
+  %div.current_rankings
+    %h3 Your current rankings for this dish:
+    %span

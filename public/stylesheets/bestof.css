@@ -18,6 +18,12 @@ div.spacer {
 	padding-top: 15px;
 }
 
+/* dish search */
+div.current_rankings { display: none; }
+
+/* rank slider */
+div.ui-slider { float: right; }
+.ui-slider-input { display: none !important; }
 
 /* place search */
 #places { display: none; }

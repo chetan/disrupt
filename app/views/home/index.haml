@@ -3,4 +3,10 @@
   %a.ui-btn-right{ :href => "/rankings/add", "data-role" => "button", "data-icon" => "add", "data-iconpos" => "right" }
     Add
 
-= render :partial => "layouts/lorem"
+%h2 Recent Activity
+%ul
+  - @recent_rankings.each do |rank|
+    %li
+      = rank.venue.name
+      was ranked
+      = "##{rank.position}"

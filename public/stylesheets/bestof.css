@@ -27,4 +27,4 @@ div.ui-slider { float: right; }
 
 /* place search */
 #places { display: none; }
-.ui-select { display: none; }
+.ui-select { display: none !important; }

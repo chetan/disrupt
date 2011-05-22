@@ -61,6 +61,9 @@ Disrupt::Application.routes.draw do
   match "/home"    => "home#index"
   match "/friends" => "friends#index"
   match "/places"  => "places#index"
+  match "/places/search" => "places#search"
   match "/me"      => "me#index"
+
+  match "/rankings/add"   => "rankings#add"
 
 end

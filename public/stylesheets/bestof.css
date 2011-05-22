@@ -13,3 +13,9 @@
 .ui-icon-friends { background:  url(/images/icons/friends.png)  50% 50% no-repeat; }
 .ui-icon-places  { background:  url(/images/icons/places.png)   50% 50% no-repeat; }
 .ui-icon-me      { background:  url(/images/icons/me.png)       50% 50% no-repeat; }
+
+
+
+/* place search */
+#places { display: none; }
+.ui-select { display: none; }

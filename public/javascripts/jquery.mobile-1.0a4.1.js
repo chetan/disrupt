@@ -3328,6 +3328,7 @@ $.widget( "mobile.selectmenu", $.mobile.widget, {
 		overlayTheme: 'a',
 		hidePlaceholderMenuItems: true,
 		closeText: 'Close',
+		alwaysTriggerChange: true,
 		nativeMenu: true
 	},
 	_create: function(){
@@ -3554,7 +3555,7 @@ $.widget( "mobile.selectmenu", $.mobile.widget, {
 				}
 
 				// trigger change if value changed
-				if( oldIndex !== newIndex ){
+				if( o.alwaysTriggerChange || oldIndex !== newIndex ){
 					select.trigger( "change" );
 				}
 

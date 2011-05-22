@@ -1,15 +1,17 @@
 %h2 Your Friends Recent Activity
 %ul
   - @current_user.friends.each do |friend|
-    %div.friend
-      %img{ :src => friend.facebook_photo, :width => 20, :height => 20 }
-      %h3
-        %a{:href => "/users/#{friend.id}" }
-          = friend.name
+    %li
+      %div.friend
+        %img{ :src => friend.facebook_photo, :width => 20, :height => 20 }
+        %h3
+          %a{:href => "/users/#{friend.id}" }
+            = friend.name
 
-      - friend.rankings.recent.each do |rank|
-        %li
-          = rank.venue.name
-          = "##{rank.position}"
-          in
-          = "[#{rank.dish.name}]"
+        %ul
+          - friend.rankings.recent.each do |rank|
+            %li
+              = rank.venue.name
+              = "##{rank.position}"
+              in
+              = "[#{rank.dish.name}]"

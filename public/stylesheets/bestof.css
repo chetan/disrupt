@@ -18,6 +18,7 @@ div.spacer {
 	padding-top: 15px;
 }
 
+div.friend { padding-bottom: 15px; }
 div.friend h2 { display: inline; }
 div.friend h3 { display: inline; }
 

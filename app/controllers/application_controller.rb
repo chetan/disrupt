@@ -3,6 +3,8 @@ require 'global'
 
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  
+  before_filter :load_user_data
 
   def fb_token
     f = cookies.keys.find{ |k| k =~ /^fbs_/ }
@@ -14,7 +16,7 @@ class ApplicationController < ActionController::Base
     fbgraph = Koala::Facebook::GraphAPI.new(fb_token())
     @fbuser = fbgraph.get_object("me")
     @fbphoto = fbgraph.get_picture("me")
-    @user = User.where("facebook_id = ?", @fbuser["id"]).first if @fbuser
+    @current_user = User.where("facebook_id = ?", @fbuser["id"]).first if @fbuser
 
     GlobalData.fbgraph = fbgraph
 

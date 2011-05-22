@@ -7,6 +7,8 @@ gem 'rails', '3.0.7'
 
 gem 'mysql'
 gem 'haml'
+gem 'foursquare2'
+gem 'multi_json'
 
 # Use unicorn as the web server
 # gem 'unicorn'

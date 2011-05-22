@@ -1,5 +1,16 @@
 
 $(window).load(function() {
+  
+  if (geo_position_js.init()) {
+      geo_position_js.getCurrentPosition(success_callback,error_callback,{enableHighAccuracy:true,options:5000});
+  }
+
+  function success_callback(p) {
+    $.ajax("/geo/set?lat=" + p.coords.latitude + "&lng=" + p.coords.longitude);      
+  }
+
+  function error_callback(p) {
+  }
 
   // $("#place").focus(function() {
   //     this.select();

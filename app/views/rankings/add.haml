@@ -1,10 +1,17 @@
 - @header_title = "BestOf :: Rank a dish"
 
 %form{ :method => "post", :action => "/rankings/add" }
-  
-  %label{:for => "place"}
-    Place
-  %input{:type => "search", :name => "place", :id => "place"}
-  %input{:type => "hidden", :id => "place_id"}
-  
-  %select#places.places{"data-native-menu" => "false"}
+
+  %div.spacer
+    %label{:for => "dish"}
+      Dish
+    %input{:type => "search", :name => "dish", :id => "dish"}
+    %input{:type => "hidden", :id => "dish_id"}
+    %select#dishes{"data-native-menu" => "false"}
+
+  %div.spacer
+    %label{:for => "place"}
+      Place
+    %input{:type => "search", :name => "place", :id => "place"}
+    %input{:type => "hidden", :id => "place_id"}
+    %select#places{"data-native-menu" => "false"}

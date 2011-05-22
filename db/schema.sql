@@ -38,7 +38,7 @@ DROP TABLE IF EXISTS `bestof`.`dishes` ;
 
 CREATE  TABLE IF NOT EXISTS `bestof`.`dishes` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
-  `category_id` INT UNSIGNED NOT NULL ,
+  `category_id` INT UNSIGNED NULL ,
   `name` VARCHAR(255) NULL ,
   PRIMARY KEY (`id`) ,
   INDEX `fk_dishes_categories1` (`category_id` ASC) ,

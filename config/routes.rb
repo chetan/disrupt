@@ -64,6 +64,8 @@ Disrupt::Application.routes.draw do
   match "/places/search" => "places#search"
   match "/me"      => "me#index"
 
+  match "/dishes/search" => "dishes#search"
+
   match "/rankings/add"   => "rankings#add"
 
 end

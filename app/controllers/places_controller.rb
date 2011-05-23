@@ -10,7 +10,15 @@ class PlacesController < ApplicationController
       query = "%#{params[:q]}%"
 
       @venues = Venue.where("name LIKE ?", query)
+      load_foursquare_venues(query)
 
+      render :json => @venues
+    end
+    
+    def load_foursquare_venues(query)
+      
+      return if not session or not session[:geo]
+      
       # get matching venues from 4sq
       client = get_foursquare_client()
       ll = session[:geo][:lat] + "," + session[:geo][:lng]
@@ -35,8 +43,7 @@ class PlacesController < ApplicationController
         end
 
       end
-
-      render :json => @venues
+      
     end
 
 end

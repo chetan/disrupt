@@ -17,6 +17,7 @@ class RankingsController < ApplicationController
   def save
     
     rank = Ranking.new
+    rank.user_id = @current_user.id
     rank.venue_id = params[:place_id]
     rank.dish_id = params[:dish_id]
     rank.position = params[:position]
